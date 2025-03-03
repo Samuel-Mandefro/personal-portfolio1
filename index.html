@@ -3,7 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+        section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        p {
+            line-height: 1.6;
+        }
+        #projects div {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #projects div div {
+            background: #252525;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        #contact p {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            section {
+                margin: 20px;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,7 +65,7 @@
     </header>
     <section id="about">
         <h2>CONTACT</h2>
-        <p> Name, a passionate software developer.</p>
+        <p>Name, a passionate software developer.</p>
     </section>
     <section id="skills">
         <h2>Skills</h2>
@@ -32,8 +86,8 @@
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email Address</p>
-        <p>LinkedIn URL: linkedin.com/in/yourname</p>
+        <p>Email: your.email@example.com</p>
+        <p>LinkedIn: linkedin.com/in/yourname</p>
     </section>
 </body>
 </html>
