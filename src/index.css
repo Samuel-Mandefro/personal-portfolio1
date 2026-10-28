@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+  
+  body {
+    background-color: #0A0E17;
+    color: #F5F7FA;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0A0E17;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #141926;
+    border-radius: 4px;
+    border: 2px solid #0A0E17;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7C5CFF;
+  }
+
+  ::selection {
+    background: rgba(0, 229, 255, 0.3);
+    color: #ffffff;
+  }
+}
+
+/* Glassmorphism custom components */
+.glass-panel {
+  background: rgba(20, 25, 38, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(20, 25, 38, 0.7);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 229, 255, 0.05);
+}
+
+/* Text glow effects */
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+}
+
+.text-glow-violet {
+  text-shadow: 0 0 12px rgba(124, 92, 255, 0.4);
+}
+
+.text-glow-magenta {
+  text-shadow: 0 0 12px rgba(255, 79, 203, 0.4);
+}
+
+/* Base custom interactive mouse glow blob */
+.cursor-glow {
+  pointer-events: none;
+  background: radial-gradient(400px circle at var(--x, 0px) var(--y, 0px), rgba(0, 229, 255, 0.06), rgba(124, 92, 255, 0.03), transparent 80%);
+  z-index: 1;
+}
+
+/* Utility to animate linear gradient borders */
+.animated-border-box {
+  position: relative;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #141926, #0A0E17);
+  padding: 1px; /* width of border */
+}
+
+.animated-border-box::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -1px; /* same as padding */
+  border-radius: inherit;
+  background: linear-gradient(135deg, #00E5FF, #7C5CFF, #FF4FCB);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+}
